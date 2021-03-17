@@ -18,11 +18,15 @@ type Props = {
 }
 
 function Sender({ sendMessage, placeholder, disabledInput, autofocus, onTextInputChange, buttonAlt, value }: Props) {
+  const [inputValue, setInputValue] = useState(value)
+
   const showChat = useSelector((state: GlobalState) => state.behavior.showChat);
   const inputRef = useRef(null);
   // @ts-ignore
   useEffect(() => { if (showChat && autofocus) inputRef.current?.focus(); }, [showChat]);
-
+  useEffect(() => {
+    setInputValue(value)
+  }, [value]);
   return (
     <form className="rcw-sender" onSubmit={sendMessage}>
       <input
@@ -35,7 +39,7 @@ function Sender({ sendMessage, placeholder, disabledInput, autofocus, onTextInpu
         autoFocus={autofocus}
         autoComplete="off"
         onChange={onTextInputChange}
-        defaultValue={value}
+        value={inputValue}
       />
       <button type="submit" className="rcw-send">
         <img src={send} className="rcw-send-icon" alt={buttonAlt} />
