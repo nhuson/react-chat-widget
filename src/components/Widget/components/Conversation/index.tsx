@@ -47,6 +47,7 @@ function Conversation({
   showTimeStamp,
   value
 }: Props) {
+  console.log("aaa", value)
   return (
     <div className={cn('rcw-conversation-container', className)} aria-live="polite">
       <Header

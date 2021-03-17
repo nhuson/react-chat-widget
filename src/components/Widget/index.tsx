@@ -53,6 +53,7 @@ function Widget({
   handleSubmit,
   value
 }: Props) {
+  console.log('----', value)
   const dispatch = useDispatch();
 
   const toggleConversation = () => {
