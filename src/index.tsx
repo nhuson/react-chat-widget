@@ -28,6 +28,7 @@ type Props = {
   imagePreview?: boolean;
   zoomStep?: number;
   handleSubmit?: AnyFunction;
+  value?: string
 } & typeof defaultProps;
 
 function ConnectedWidget({
@@ -50,7 +51,8 @@ function ConnectedWidget({
   showTimeStamp,
   imagePreview,
   zoomStep,
-  handleSubmit
+  handleSubmit,
+  value
 }: Props) {
   return (
     <Provider store={store}>
@@ -75,6 +77,7 @@ function ConnectedWidget({
         imagePreview={imagePreview}
         zoomStep={zoomStep}
         handleSubmit={handleSubmit}
+        value={value}
       />
     </Provider>
   );
