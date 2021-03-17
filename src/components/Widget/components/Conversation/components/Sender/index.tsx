@@ -39,7 +39,7 @@ function Sender({ sendMessage, placeholder, disabledInput, autofocus, onTextInpu
         autoFocus={autofocus}
         autoComplete="off"
         onChange={onTextInputChange}
-        value={inputValue}
+        defaultValue={inputValue}
       />
       <button type="submit" className="rcw-send">
         <img src={send} className="rcw-send-icon" alt={buttonAlt} />
